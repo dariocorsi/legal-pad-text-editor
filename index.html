@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Legal Pad Text Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <div class="legal-pad">
+  <div class="pad-binding"> 
+    <div class="button-group">
+    <button class="button" onclick="saveTextAsFile()">Export TXT</button> 
+    <button class="button" onclick="removePage()">Clear</button>  
+      </div>
+  </div>
+  <div id="pad-content" class="pad-content">
+    <div id="pad-header" class="pad-header">
+      <div class="pad-margin"></div>
+      <input type="text" id="pad-title" class="pad-title" placeholder="Untitled Note">
+    </div>
+    <div id="pad-body" class="pad-body">
+      <div class="pad-margin"></div>
+      <textarea id="pad-input" class="pad-input" placeholder="Start typing here..."></textarea>
+    </div>
+  </div>
+
+  <div class="pad-content dummy">
+    <div class="pad-header">
+      <div class="pad-margin"></div>
+      <input type="text" class="pad-title" placeholder="Untitled Note">
+    </div>
+    <div class="pad-body">
+      <div class="pad-margin"></div>
+      <textarea class="pad-input" placeholder="Start typing here..."></textarea>
+    </div>
+  </div>  
+
+</div>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

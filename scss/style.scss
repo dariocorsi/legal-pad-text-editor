@@ -1,0 +1,179 @@
+$color-paper:#ffffcc;
+$color-binding:#b34646;
+$color-line-rule:#cce0ff;
+$color-margin-rule: #ffcccc;
+$color-text: #555;
+$color-shadow:rgba(0, 0, 0, .1);
+$font-size-header: 1.2rem;
+$font-size: 1rem;
+$line-height:2rem;
+$rule-spacing: $line-height;
+$rule-width:2px;
+$binding-height: 60px;
+$margin-width:90px;
+$content-margin:20px;
+$header-height:90px;
+$pad-width: 425px;
+$pad-height: 550px;
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+body,
+input,
+textarea {
+  font-family: sans-serif;
+  color: $color-text;
+  letter-spacing: .04em;
+}
+.legal-pad {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 1rem;
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  overflow: hidden;
+}
+.pad-binding {
+  align-items: center;
+  color: darken($color-binding, 4%);
+  display: flex;
+  font-weight: 600;
+  height: $binding-height;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $color-binding;
+  border-bottom: 4px solid darken($color-binding, 10%);
+  z-index: 3;
+  box-sizing: border-box;
+  padding: auto $margin-width;
+  .button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: $margin-width;
+    .button {
+      background: darken($color-binding, 10%);
+      border: 0;
+      border-radius: 4px;
+      color: lighten($color-binding, 30%);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 600;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        background: lighten($color-binding, 10%);
+      }
+    }
+  }
+}
+.pad-content {
+  background: $color-paper;
+  position: absolute;
+  top: $binding-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 20px 10px $color-shadow;
+  z-index: 1;
+  &.dummy {
+    z-index: 0;
+  }
+  &.removing-page {
+    animation: remove-page 2000ms;
+  }
+}
+.pad-margin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-right: $rule-width solid $color-margin-rule;
+  width: $margin-width;
+  z-index: 0;
+  &:before {
+    position: absolute;
+    right: 6px;
+    content: '';
+    width: $rule-width;
+    display: block;
+    height: 100%;
+    background: $color-margin-rule;
+  }
+}
+.pad-header {
+  z-index: 2;
+  height: $header-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: box-shadow .2s ease;
+  &.is-overlapping {
+    box-shadow: 0 0 8px 4px $color-shadow;
+  }
+  .pad-title {
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    padding-left: $margin-width + $content-margin;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.pad-body {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient( $color-line-rule, $color-line-rule $rule-width, transparent $rule-width, transparent $rule-spacing);
+  background-attachment: local;
+  background-size: 32px 32px;
+  .pad-input {
+    background: transparent;
+    line-height: $line-height;
+    font-size: $font-size;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding-left: $margin-width + $content-margin;
+    padding-right: $content-margin;
+    box-sizing: border-box;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+@keyframes remove-page {
+  0% {}
+  100% {
+    transform: rotate(0deg) translate(200%, 50%);
+  }
+}
