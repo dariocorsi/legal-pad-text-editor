@@ -64,7 +64,7 @@ textarea {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: $margin-width;
+    margin: 0 1rem;
     .button {
       background: darken($color-binding, 10%);
       border: 0;
@@ -78,6 +78,9 @@ textarea {
       &:hover,
       &:focus {
         background: lighten($color-binding, 10%);
+      }
+      &:active{
+        background: darken($color-binding, 10%);
       }
     }
   }
@@ -95,7 +98,7 @@ textarea {
     z-index: 0;
   }
   &.removing-page {
-    animation: remove-page 2000ms;
+    animation: remove-page 1000ms;
   }
 }
 .pad-margin {
@@ -174,6 +177,6 @@ textarea {
 @keyframes remove-page {
   0% {}
   100% {
-    transform: rotate(0deg) translate(200%, 50%);
+    transform: rotate(-20deg) translateY(120%);
   }
 }

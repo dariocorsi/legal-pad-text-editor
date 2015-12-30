@@ -58,7 +58,7 @@ textarea {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 90px;
+  margin: 0 1rem;
 }
 /* line 68, ../scss/style.scss */
 .pad-binding .button-group .button {
@@ -76,8 +76,12 @@ textarea {
 .pad-binding .button-group .button:hover, .pad-binding .button-group .button:focus {
   background: #c46868;
 }
+/* line 82, ../scss/style.scss */
+.pad-binding .button-group .button:active {
+  background: #8e3838;
+}
 
-/* line 85, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 .pad-content {
   background: #ffffcc;
   position: absolute;
@@ -88,16 +92,16 @@ textarea {
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
-/* line 94, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 .pad-content.dummy {
   z-index: 0;
 }
-/* line 97, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 .pad-content.removing-page {
-  animation: remove-page 2000ms;
+  animation: remove-page 1000ms;
 }
 
-/* line 101, ../scss/style.scss */
+/* line 104, ../scss/style.scss */
 .pad-margin {
   position: absolute;
   top: 0;
@@ -107,7 +111,7 @@ textarea {
   width: 90px;
   z-index: 0;
 }
-/* line 109, ../scss/style.scss */
+/* line 112, ../scss/style.scss */
 .pad-margin:before {
   position: absolute;
   right: 6px;
@@ -118,7 +122,7 @@ textarea {
   background: #ffcccc;
 }
 
-/* line 119, ../scss/style.scss */
+/* line 122, ../scss/style.scss */
 .pad-header {
   z-index: 2;
   height: 90px;
@@ -128,11 +132,11 @@ textarea {
   right: 0;
   transition: box-shadow .2s ease;
 }
-/* line 127, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 .pad-header.is-overlapping {
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
 }
-/* line 130, ../scss/style.scss */
+/* line 133, ../scss/style.scss */
 .pad-header .pad-title {
   border: 0;
   background: transparent;
@@ -148,12 +152,12 @@ textarea {
   display: block;
   box-sizing: border-box;
 }
-/* line 144, ../scss/style.scss */
+/* line 147, ../scss/style.scss */
 .pad-header .pad-title:focus {
   outline: none;
 }
 
-/* line 149, ../scss/style.scss */
+/* line 152, ../scss/style.scss */
 .pad-body {
   position: absolute;
   top: 90px;
@@ -164,7 +168,7 @@ textarea {
   background-attachment: local;
   background-size: 32px 32px;
 }
-/* line 158, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 .pad-body .pad-input {
   background: transparent;
   line-height: 2rem;
@@ -177,13 +181,13 @@ textarea {
   padding-right: 20px;
   box-sizing: border-box;
 }
-/* line 169, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 .pad-body .pad-input:focus {
   outline: none;
 }
 
 @keyframes remove-page {
   100% {
-    transform: rotate(0deg) translate(200%, 50%);
+    transform: rotate(-20deg) translateY(120%);
   }
 }
